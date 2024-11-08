@@ -1,5 +1,7 @@
 # Contribute
 
+**Vishvogg's mod
+
 **Opening a new issue?** Please read [ISSUES.md](../ISSUES.md) first.
 
 **Want an introductory guide for creating game content?** You might want to
