@@ -1,5 +1,4 @@
 #include "npc_attack.h"
-
 #include "cata_utility.h"
 #include "character.h"
 #include "creature_tracker.h"
@@ -562,14 +561,14 @@ npc_attack_rating npc_attack_gun::evaluate_tripoint(
 
     // Make attacks that involve moving to find clear LOS slightly less likely
     if( has_obstruction( source.pos_bub(), location, avoids_friendly_fire ) ) {
-        potential *= 0.9f;
+        potential *= 1.00f;
     } else if( avoids_friendly_fire &&
                !source.wont_hit_friend( tripoint_bub_ms( location ), gun, false ) ) {
-        potential *= 0.95f;
+        potential *= 1.00f;
     }
 
     // Prefer targets not directly next to you
-    potential *= distance_to_me > 2 ? 1.15f : 0.85f;
+    potential *= distance_to_me > 2 ? 1.05f : 0.95f;
 
     if( damage >= critter->get_hp() ) {
         potential *= npc_attack_constants::kill_modifier;
